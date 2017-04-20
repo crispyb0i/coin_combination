@@ -1,14 +1,12 @@
-
 require('capybara/rspec')
 require('./app')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
-# add own description
-describe('the rock,paper,scissor result path', {:type => :feature}) do
-  it('processes the user entry and returns the result of their rock,paper,scissors game') do
+describe('the coin conversion result path', {:type => :feature}) do
+  it('processes the user entry and returns the number of coins from the greatest denomination to the smallest') do
     visit('/')
-    select('Rock', from: 'title1')
+    select('85', from: 'coin_form')
     click_button('Send')
-    expect(page).to have_content('Computer threw Rock. Draw Game')
+    expect(page).to have_content('Quarter(s):3", "Dime(s):1", "Nickel(s):0", "Cent(s):0')
   end
 end

@@ -1,13 +1,13 @@
 require('sinatra')
 require('sinatra/reloader')
-# require('./lib/rock_paper_scissors')
+require('./lib/coin_combinations')
 also_reload('lib/**/*.rb')
 
 get('/') do
   erb(:index)
 end
 
-get('/title') do
-  # @title = (params.fetch('title1')).rps()
-  erb(:title)
+get('/coin') do
+  @coin = (params.fetch('coin_form').to_i).cc()
+  erb(:coin)
 end

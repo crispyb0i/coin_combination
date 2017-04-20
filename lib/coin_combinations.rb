@@ -31,7 +31,7 @@ counter = input
       penny_count = counter
       counter = 0
     end
-    puts(quarter_count,dime_count,nickel_count,penny_count)
     end
+    return "Quarter(s):" + quarter_count.to_s + ", " + "Dime(s):" + dime_count.to_s + ", " + "Nickel(s):" + nickel_count.to_s + ", " + "Cent(s):" + penny_count.to_s
   end
 end
